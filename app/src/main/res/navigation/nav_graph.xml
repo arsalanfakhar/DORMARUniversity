@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.trulyfuture.dormaruniversityside.screens.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_liveSessionsFragment"
+            app:destination="@id/liveSessionsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dormsFragment"
+            app:destination="@id/dormsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/liveSessionsFragment"
+        android:name="com.trulyfuture.dormaruniversityside.screens.liveSessions.LiveSessionsFragment"
+        android:label="fragment_live_sessions"
+        tools:layout="@layout/fragment_live_sessions" />
+    <fragment
+        android:id="@+id/dormsFragment"
+        android:name="com.trulyfuture.dormaruniversityside.DormsFragment"
+        android:label="fragment_dorms"
+        tools:layout="@layout/fragment_dorms" />
+</navigation>
