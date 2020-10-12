@@ -52,7 +52,7 @@ public class HomeFragment extends Fragment {
         });
 
         binding.sessionsLayout.setOnClickListener(v -> {
-
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_sessionsFragment);
         });
 
     }

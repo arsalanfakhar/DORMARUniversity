@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.18" />
+        app:layout_constraintGuide_percent="0.10" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -62,9 +62,10 @@
         app:startIconTint="@color/colorWhite">
 
         <EditText
+            android:id="@+id/firstName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Full Name"
+            android:hint="First Name"
             android:inputType="text"
             android:padding="0dp"
             android:textColor="@color/colorWhite"
@@ -76,7 +77,7 @@
         style="@style/TextInputRounded"
         android:layout_width="0dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,9 +87,10 @@
         app:startIconTint="@color/colorWhite">
 
         <EditText
+            android:id="@+id/lastName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Username"
+            android:hint="Last Name"
             android:inputType="text"
             android:padding="0dp"
             android:textColor="@color/colorWhite"
@@ -100,7 +102,7 @@
         style="@style/TextInputRounded"
         android:layout_width="0dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,6 +112,7 @@
         app:startIconTint="@color/colorWhite">
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Email"
@@ -124,7 +127,7 @@
         style="@style/TextInputRounded"
         android:layout_width="0dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
         app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,6 +139,7 @@
         app:startIconTint="@color/colorWhite">
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Password"
@@ -145,11 +149,61 @@
             android:textColorHint="@color/colorWhite" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInput5"
+        style="@style/TextInputRounded"
+        android:layout_width="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInput4"
+        app:startIconDrawable="@drawable/ic_securitypass"
+        app:startIconTint="@color/colorWhite">
+
+        <EditText
+            android:id="@+id/universityId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="University Id"
+            android:inputType="number"
+            android:padding="0dp"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInput6"
+        style="@style/TextInputRounded"
+        android:layout_width="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInput5"
+        app:startIconDrawable="@drawable/ic_phone"
+        app:startIconTint="@color/colorWhite">
+
+        <EditText
+            android:id="@+id/phoneNum"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Phone no"
+            android:inputType="number"
+            android:padding="0dp"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signupBtn"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
         android:backgroundTint="@color/red"
         android:minWidth="200dp"
         android:text="Signup"
@@ -157,8 +211,7 @@
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="@+id/textInput4"
-        app:layout_constraintStart_toStartOf="@+id/textInput4"
-        app:layout_constraintTop_toBottomOf="@+id/textInput4" />
+        app:layout_constraintStart_toStartOf="@+id/textInput4" />
 
     <TextView
         android:id="@+id/textView4"
