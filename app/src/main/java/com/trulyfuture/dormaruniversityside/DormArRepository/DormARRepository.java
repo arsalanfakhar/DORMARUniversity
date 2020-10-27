@@ -76,5 +76,29 @@ public class DormARRepository {
 
     }
 
+    public MutableLiveData<DormArResults> addSession(HashMap<String,Object> sessionMap){
+        MutableLiveData<DormArResults> data = new MutableLiveData<>();
+
+        Call<DormArResults> dormArResultsCall=apiInterface.addSession(sessionMap);
+
+        dormArResultsCall.enqueue(new Callback<DormArResults>() {
+            @Override
+            public void onResponse(Call<DormArResults> call, Response<DormArResults> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    data.postValue(response.body());
+                } else {
+                    Toast.makeText(application.getApplicationContext(), response.message(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<DormArResults> call, Throwable t) {
+                Toast.makeText(application.getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return data;
+
+    }
 
 }

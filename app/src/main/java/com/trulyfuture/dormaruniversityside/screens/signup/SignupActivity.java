@@ -14,13 +14,16 @@ import com.trulyfuture.dormaruniversityside.databinding.ActivitySignupBinding;
 import com.trulyfuture.dormaruniversityside.screens.login.LoginActivity;
 import com.trulyfuture.dormaruniversityside.screens.login.LoginViewModel;
 import com.trulyfuture.dormaruniversityside.utils.ProgressDialog;
+import com.trulyfuture.dormaruniversityside.utils.SharedPreferenceClass;
 
+import java.util.Calendar;
 import java.util.HashMap;
 
 public class SignupActivity extends AppCompatActivity {
 
     private ActivitySignupBinding binding;
     private SignupViewModel viewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +53,11 @@ public class SignupActivity extends AppCompatActivity {
 
                 viewModel.addUser(userMap).observe(this, dormArResults -> {
                     ProgressDialog.hideLoader();
-
+                    Toast.makeText(this,dormArResults.getResults().getMessage(),Toast.LENGTH_SHORT).show();
                     if (dormArResults.getResults().getCode()==1){
-                        Toast.makeText(this,"Signup Sucessfull",Toast.LENGTH_SHORT).show();
+                        addToSharedPrefs(dormArResults.getResults().getId());
                         startActivity(new Intent(SignupActivity.this, MainActivity.class));
                         finish();
-                    }
-                    else {
-                        Toast.makeText(this,dormArResults.getResults().getMessage(),Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -88,5 +88,10 @@ public class SignupActivity extends AppCompatActivity {
         return false;
     }
 
+    private void addToSharedPrefs(int userId){
+        SharedPreferenceClass sharedPreferenceClass = new SharedPreferenceClass(this, SharedPreferenceClass.UserDetails);
+        sharedPreferenceClass.SetIntegerEditor("userId",userId);
+        sharedPreferenceClass.DoCommit();
+    }
 
 }

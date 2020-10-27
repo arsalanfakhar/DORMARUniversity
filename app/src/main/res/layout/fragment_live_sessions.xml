@@ -79,13 +79,12 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6">
 
             <EditText
-                android:id="@+id/usernameText"
+                android:id="@+id/sessionName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Enter session name"
                 android:inputType="text"
                 android:padding="0dp"
-                android:textAlignment="center"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -117,7 +116,7 @@
             app:startIconTint="@color/colorWhite">
 
             <EditText
-                android:id="@+id/sessionText"
+                android:id="@+id/sessionDate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Select session date"
@@ -165,7 +164,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/loginBtn"
+            android:id="@+id/createSessionBtn"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginTop="8dp"

@@ -2,6 +2,7 @@ package com.trulyfuture.dormaruniversityside.retrofit;
 
 import com.trulyfuture.dormaruniversityside.model.DormArResults;
 
+import java.io.StringReader;
 import java.util.HashMap;
 
 import retrofit2.Call;
@@ -15,5 +16,9 @@ public interface DormArApiInterface {
 
     @POST("agents")
     Call<DormArResults> addUser(@Body HashMap<String,Object> userMap);
+
+    @POST("sessions")
+    Call<DormArResults> addSession(@Body HashMap<String,Object> sessionMap);
+
 
 }
